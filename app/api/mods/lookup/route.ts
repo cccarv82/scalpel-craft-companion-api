@@ -71,8 +71,9 @@ export async function POST(req: Request) {
 //   Both →  "# to strength"
 function normalizeModText(text: string): string {
   let t = text
-  // Strip wiki tags: [DisplayName|WikiName] or [DisplayName] -> DisplayName
-  t = t.replace(/\[([^|\]]+)\|[^\]]+\]/g, '$1').replace(/\[([^\]]+)\]/g, '$1')
+  // RePoE-fork wiki tags: [Display|WikiName] -> WikiName (the second part is
+  // what players see in-game). [Foo] -> Foo.
+  t = t.replace(/\[([^|\]]+)\|([^\]]+)\]/g, '$2').replace(/\[([^\]]+)\]/g, '$1')
   // Roll ranges like (5-8) or (5 to 8) -> #
   t = t.replace(/\(\s*[-+]?\d+(\.\d+)?\s*(?:-|to)\s*[-+]?\d+(\.\d+)?\s*\)/gi, '#')
   // Standalone numbers (including signed) -> #

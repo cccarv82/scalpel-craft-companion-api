@@ -1,0 +1,163 @@
+{
+  "title": "Gloves Craft (Speed-tag Attack Speed + Double Flat)",
+  "slot": "gloves",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Endgame gloves with desecrated speed-tag mod, T1 Attack Speed, double Hybrid ES/Eva, and double flat damage on prefix. Designed for ev/es or pure ES exceptional 2-socket bases.",
+  "difficulty": 5,
+  "estimatedCostMin": 6,
+  "estimatedCostMax": 20,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 75,
+    "base": "Exceptional 2-socket gloves",
+    "hint": "ev/es is ideal, pure ES is also fine. Exceptional base (the 2-socket tier) is required for the double-rune push at the end.",
+    "sockets": 2
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Rare → annul to 1 mod → essence + bone (or skip with chaos spam shortcut)",
+      "description": "Make the gloves rare, then Orb of Annulment until you have a single modifier. Apply Essence of Abyss:\n\n• If the abyss lands a PREFIX → Chaos Orb and repeat from the annul step.\n• If the abyss lands a SUFFIX → use Preserved Rib.\n\nSHORTCUT: Omen of Light is expensive these days. You can instead just chaos orb hunting for T1 Attack Speed or T1 Rarity directly and skip steps 1, 2 and 3 entirely.",
+      "currency": [
+        { "name": "Orb of Annulment", "category": "standard" },
+        { "name": "Essence of Abyss", "category": "essence" },
+        { "name": "Preserved Rib", "category": "bone" },
+        { "name": "Chaos Orb", "category": "standard", "qty": 100 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      },
+      "branches": [
+        {
+          "condition": "Shortcut: chaos spam for T1 Attack Speed / T1 Rarity",
+          "match": {
+            "requiredMods": [
+              { "pattern": "% increased attack speed", "minTier": 1, "suffix": true }
+            ]
+          },
+          "nextStep": 3,
+          "message": "Skip steps 1, 2 and 3 if chaos spam landed your desired T1 attack speed suffix."
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "title": "Unveil for speed-tag modifier",
+      "description": "Unveil with Abyssal Echoes. You're looking for one of the two speed-tag desecrated mods:\n\n• \"Increased Cast Speed when on Full Life\"\n• \"Increased Skill Speed if you've Consumed a Frenzy [Charge]\"\n\nIf neither of these mods appear, chaos orb the gloves and repeat step 0.",
+      "currency": [
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      },
+      "stopLoss": "If you can't roll into one of those two desecrated mods after several attempts, reset the base from step 0."
+    },
+    {
+      "index": 2,
+      "title": "Homogenising Greater Exalt → T1 Attack Speed, then Omen of Light to remove desecrated",
+      "description": "Use Omen of Homogenising Exaltation + Greater Exalted Orb — this gives a 50% chance to land T1 Attack Speed.\n\nIf you'd rather pay for certainty, swap the Greater Exalted Orb for a Perfect Exalted Orb — 100% chance for T1.\n\nOnce you have T1 Attack Speed locked in, use Omen of Light + Orb of Annulment to remove the desecrated mod (you've extracted the value from it).",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard", "optional": true },
+        { "name": "Perfect Exalted Orb", "category": "standard", "optional": true },
+        { "name": "Omen of Light", "category": "omen" },
+        { "name": "Orb of Annulment", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "% increased attack speed", "minTier": 1, "suffix": true }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "title": "Double-omen Exalt → fill 2 prefixes",
+      "description": "Stack Omen of Greater Exaltation + Omen of Sinistral Exaltation, then Exalt once. This will fill 2 prefix slots in one go.",
+      "currency": [
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Omen of Sinistral Exaltation", "category": "omen" },
+        { "name": "Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 }
+      }
+    },
+    {
+      "index": 4,
+      "title": "Sinistral Crystallise twice → essences swap prefixes for suffix completions",
+      "description": "Now consume both prefixes you just slammed by using Omen of Sinistral Crystallisation twice — one with Essence of Hysteria and one with Essence of Horror. This kills both prefixes but completes your suffix line with strong rolls.",
+      "currency": [
+        { "name": "Omen of Sinistral Crystallisation", "category": "omen", "qty": 2 },
+        { "name": "Essence of Hysteria", "category": "essence" },
+        { "name": "Essence of Horror", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    },
+    {
+      "index": 5,
+      "title": "Bone unveil for accuracy (or T1 flat to gamble)",
+      "description": "Apply Preserved Rib and unveil. You want accuracy here — it BLOCKS your final exalt slams from landing on accuracy.\n\nAlternatively unveil T1 flat damage directly — you skip the exalt slam but you can also brick the next step. Risky.",
+      "currency": [
+        { "name": "Preserved Rib", "category": "bone" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    },
+    {
+      "index": 6,
+      "title": "Homogenising + Greater Exalt + Perfect Exalt → double flat damage",
+      "description": "Use Omen of Homogenising Exaltation + Omen of Greater Exaltation with a Perfect Exalted Orb. If accuracy was successfully unveiled and blocking, this is a 100% chance to hit double flat damage on the gloves.",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Perfect Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "adds # to # .* damage to attacks", "prefix": true, "description": "Double flat damage prefix" }
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "title": "Omen of Light + Annul → remove accuracy if present",
+      "description": "If accuracy was the blocker on the previous step, use Omen of Light + Orb of Annulment to selectively strip it now — leaves your double flat intact.",
+      "currency": [
+        { "name": "Omen of Light", "category": "omen" },
+        { "name": "Orb of Annulment", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    },
+    {
+      "index": 8,
+      "title": "Ancient Rib → finish the last prefix",
+      "description": "Apply Ancient Rib for the final prefix. Use Omen of Echoes (for reroll choices) or Omen of Light (to selectively annul if needed) until you land your desired mod (hybrid ES/Eva ideal).",
+      "currency": [
+        { "name": "Ancient Rib", "category": "bone" },
+        { "name": "Omen of Refreshment", "category": "omen", "optional": true },
+        { "name": "Omen of Light", "category": "omen", "optional": true }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "Speed-tag desecrated mods are rare — price proudly.",
+    "Don't forget to mention 'T1 Attack Speed + double hybrid ES/Eva + double flat' in your listing description — these gloves don't surface naturally on basic stat filters."
+  ],
+  "notes": [
+    "Step 0 has a shortcut path — chaos spam can save you 3 omens worth of currency if you get lucky.",
+    "Step 5 → 6 is the expensive double-flat gamble. Confirm you have accuracy blocking before slamming Perfect Exalt."
+  ]
+}

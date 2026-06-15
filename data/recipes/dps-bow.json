@@ -1,0 +1,118 @@
+{
+  "title": "DPS Bow Craft (Obliterator / Warmonger)",
+  "slot": "bow",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Endgame DPS bow with T3+ % physical damage, flat physical damage from omen-greater-exaltation, and runes for the final flat push. Base-flexible: works on either Obliterator or Warmonger Bow.",
+  "difficulty": 3,
+  "estimatedCostMin": 4,
+  "estimatedCostMax": 15,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 81,
+    "base": "Obliterator Bow OR Warmonger Bow",
+    "hint": "Find a 2-mod rare base where one of the mods is % Increased Physical Damage at T3 or better (~135%+). If the base only has 1 mod, use a Perfect Orb of Augmentation first so you start with 2 mods.",
+    "sockets": 2
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Slam your prefix anchor essence (base-dependent)",
+      "description": "Use the essence that matches your base:\n\n• Obliterator Bow → Greater Essence of Seeking (crit suffix — critical for this craft)\n• Warmonger Bow → Greater Essence of Abrasion (flat physical prefix)\n\nIf your base started with only one mod, apply a Perfect Orb of Augmentation BEFORE the essence so you end up with 3 mods including the essence-forced one.",
+      "currency": [
+        { "name": "Perfect Orb of Augmentation", "category": "standard", "optional": true },
+        { "name": "Greater Essence of Seeking", "category": "essence", "optional": true },
+        { "name": "Greater Essence of Abrasion", "category": "essence", "optional": true }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "ilvlMin": 81,
+        "affixCount": { "min": 3 }
+      },
+      "branches": [
+        {
+          "condition": "Obliterator base — wants crit",
+          "match": {
+            "baseTypeIncludes": ["Obliterator Bow"]
+          },
+          "nextStep": 1,
+          "message": "Use Greater Essence of Seeking. The Critical Hit Chance roll is what makes this base shine."
+        },
+        {
+          "condition": "Warmonger base — wants flat phys",
+          "match": {
+            "baseTypeIncludes": ["Warmonger Bow"]
+          },
+          "nextStep": 1,
+          "message": "Use Greater Essence of Abrasion to lock in flat physical."
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "title": "Bone slam: Dextral Necromancy + Omen of the Liege + Preserved Jawbone",
+      "description": "Stack:\n• Omen of Dextral Necromancy (forces SUFFIX from the bone)\n• Omen of the Liege (no junk — guaranteed valuable mod)\n• Preserved Jawbone\n\nThis fills a suffix slot with a strong rolled mod.",
+      "currency": [
+        { "name": "Omen of Dextral Necromancy", "category": "omen" },
+        { "name": "Omen of the Liege", "category": "omen" },
+        { "name": "Preserved Jawbone", "category": "bone" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 }
+      }
+    },
+    {
+      "index": 2,
+      "title": "Well of Souls — bias unveil toward Attack Speed",
+      "description": "Activate The Well of Souls with Attack Speed as the target tag. This biases the next abyss/desecration roll to land on attack speed, giving you the second key suffix.",
+      "currency": [
+        { "name": "The Well of Souls", "category": "well", "qty": 1 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "% increased attack speed", "suffix": true, "description": "Attack speed via Well" }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "title": "Greater Exalt with Omen of Greater Exaltation → flat damage",
+      "description": "Omen of Greater Exaltation + Greater Exalted Orb. This consumes a prefix slot and lands a flat damage mod (the bow's biggest dps lever).",
+      "currency": [
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 5 },
+        "requiredMods": [
+          { "pattern": "adds # to # physical damage", "prefix": true, "description": "Flat phys" }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "title": "Add 2 sockets and apply Greater Iron Runes",
+      "description": "Artificer Orb to open 2 sockets if not already present. Apply Greater Iron Rune in each — adds flat physical damage. Final DPS push that pushes you over the listing breakpoint.",
+      "currency": [
+        { "name": "Artificer’s Orb", "category": "standard", "qty": 2 },
+        { "name": "Greater Iron Rune", "category": "rune", "qty": 2 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    }
+  ],
+  "pricingTips": [
+    "Total DPS → list at the actual rolled value.",
+    "Physical DPS → list at the actual rolled value.",
+    "Critical Hit Chance → list a touch below the actual roll, or list both with a middle-ground asking price."
+  ],
+  "notes": [
+    "Watch your base: Obliterator wants the Seeking essence, Warmonger wants Abrasion. Wrong essence = bricked craft.",
+    "Step 2 The Well of Souls is interchangeable with Crit Damage Bonus if you prefer that suffix — adjust to the build buying it.",
+    "Skip step 4 if your bow already prices well without runes — runes cost less than the DPS they add."
+  ]
+}

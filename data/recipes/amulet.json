@@ -1,0 +1,133 @@
+{
+  "title": "Amulet Craft (T1 Spirit + Defenses + Resistances + Max ES)",
+  "slot": "amulet",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Fractured +3 projectile amulet with T1 Spirit prefix, global defense, double resistance suffix, and max ES / rarity bonus. Expensive but a top-tier endgame slot.",
+  "difficulty": 5,
+  "estimatedCostMin": 15,
+  "estimatedCostMax": 60,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 75,
+    "base": "Any amulet base — ilvl 82 for T1 resistance access",
+    "hint": "ilvl 75 is fine for most rolls. ilvl 82 only matters if you want T1 resistance specifically. Bring a budget — this craft is amongst the most expensive listed.",
+    "fractureFriendly": true
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Buy or self-fracture +3 projectile base",
+      "description": "Buy a fractured +3 projectile amulet base off trade. If you want to gamble, you can also self-fracture an existing one — usually cheaper to just buy a clean fracture.",
+      "currency": [
+        { "name": "Fracturing Orb", "category": "standard", "optional": true }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "requiredMods": [
+          { "pattern": "to level of all projectile.*spells|to level of all projectile.*skill", "prefix": true, "description": "+3 projectile fractured" }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "title": "Chaos spam for T1 Spirit",
+      "description": "Chaos spam the amulet until you hit T1 Spirit (the highest tier spirit prefix). This is expensive — budget 300+ chaos orbs on average to find the roll.",
+      "currency": [
+        { "name": "Chaos Orb", "category": "standard", "qty": 300 }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "requiredMods": [
+          { "pattern": "to spirit", "minTier": 1, "prefix": true, "description": "T1 Spirit" }
+        ]
+      },
+      "stopLoss": "T1 Spirit is the gate of this whole craft. If 500 chaos in without a hit, evaluate if your base is even competitive."
+    },
+    {
+      "index": 2,
+      "title": "Dextral Exalt → Dextral Crystallise + Perfect Essence of Enhancement",
+      "description": "Use Omen of Dextral Exaltation + Exalted Orb to land a suffix. Then Dextral Crystallisation + Perfect Essence of Enhancement → removes the suffix and adds GLOBAL DEFENSE as a prefix in its place.",
+      "currency": [
+        { "name": "Omen of Dextral Exaltation", "category": "omen" },
+        { "name": "Exalted Orb", "category": "standard" },
+        { "name": "Omen of Dextral Crystallisation", "category": "omen" },
+        { "name": "Perfect Essence of Enhancement", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "affixCount": { "min": 3 }
+      }
+    },
+    {
+      "index": 3,
+      "title": "Dextral Necromancy + Preserved Collarbone + Echoes for resistance unveil",
+      "description": "Stack Omen of Dextral Necromancy with Preserved Collarbone. Use Abyssal Echoes for unveil rerolls.\n\nYou're looking for any resist on the unveil. 6 looks should nearly always land at least one resistance.",
+      "currency": [
+        { "name": "Omen of Dextral Necromancy", "category": "omen" },
+        { "name": "Preserved Collarbone", "category": "bone" },
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "requiredMods": [
+          { "pattern": "% to .* resistance", "suffix": true }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "title": "Homogenising + Dextral Exalt + Greater Exalt → second resistance suffix",
+      "description": "Use Omen of Homogenising Exaltation + Omen of Dextral Exaltation + Greater Exalted Orb. This is a 100% chance to land a resistance suffix.\n\nAlternative: use a Catalysing Exaltation + matching Catalyst to target a specific resistance of your choice (e.g. cold or fire).",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Dextral Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard" },
+        { "name": "Omen of Catalysing Exaltation", "category": "omen", "optional": true }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "affixCount": { "min": 4 }
+      }
+    },
+    {
+      "index": 5,
+      "title": "Omen of Light → annul → repeat step 4 for double-res suffix",
+      "description": "Use Omen of Light + annul to selectively remove the previous suffix, then repeat the previous step. End state: 2 resistance suffixes on the amulet.\n\nIf your build doesn't need more resistance, do this same step but with Crit Chance instead (Catalysing + Crit catalyst).",
+      "currency": [
+        { "name": "Omen of Light", "category": "omen" },
+        { "name": "Orb of Annulment", "category": "standard" },
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Dextral Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "affixCount": { "min": 5 }
+      }
+    },
+    {
+      "index": 6,
+      "title": "Preserved Collarbone + Abyssal Echoes → max ES% or Rarity",
+      "description": "Apply Preserved Collarbone with Abyssal Echoes. Target mod is maximum Energy Shield % or Magic Find / Rarity.\n\nIf you fail to hit it, Omen of Light + annul to remove the failed mod and retry.",
+      "currency": [
+        { "name": "Preserved Collarbone", "category": "bone" },
+        { "name": "Abyssal Echoes", "category": "echo" },
+        { "name": "Omen of Light", "category": "omen", "optional": true },
+        { "name": "Orb of Annulment", "category": "standard", "optional": true }
+      ],
+      "expectedAfter": {
+        "fractured": true,
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "+3 Projectile + T1 Spirit alone is enough to bait the right buyers — lead the description with these.",
+    "Specific resistances (fire/cold) sell faster than open-tier resistance — call them out in the listing title."
+  ],
+  "notes": [
+    "Step 1 (T1 Spirit) is the gate. If you don't hit it, the rest of the craft can't recover the cost.",
+    "If your build doesn't care about double resistance, swap one of the suffix slams in step 5 for Crit Chance instead."
+  ]
+}

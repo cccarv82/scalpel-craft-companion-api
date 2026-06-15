@@ -1,0 +1,112 @@
+{
+  "title": "Boots Craft (Deflection + Movement Speed + Hybrid)",
+  "slot": "boots",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Exceptional ev/es 2-socket boots with T1/T2 deflection, full suffix line including resistance and movement speed, and hybrid ev/es prefixes.",
+  "difficulty": 3,
+  "estimatedCostMin": 3,
+  "estimatedCostMax": 12,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 75,
+    "base": "Exceptional 2-socket ev/es hybrid boots",
+    "hint": "ev/es hybrid base is the target. Skip pure-armour or pure-ES exceptional bases for this craft.",
+    "sockets": 2
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Make rare → annul to 1 mod → chaos spam for T1/T2 deflection",
+      "description": "Make the boots rare, annul down to a single mod. Chaos spam looking for T1 or T2 deflection rating prefix.",
+      "currency": [
+        { "name": "Orb of Annulment", "category": "standard" },
+        { "name": "Chaos Orb", "category": "standard", "qty": 80 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "deflection rating", "minTier": 2, "prefix": true }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "title": "Sinistral Exalt → land a prefix",
+      "description": "Omen of Sinistral Exaltation + Exalted Orb to fill a prefix slot.",
+      "currency": [
+        { "name": "Omen of Sinistral Exaltation", "category": "omen" },
+        { "name": "Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    },
+    {
+      "index": 2,
+      "title": "Sinistral Crystallise + Essence of Horror",
+      "description": "Omen of Sinistral Crystallisation + Essence of Horror — consumes the prefix you just slammed and substitutes T1 Attack Speed.",
+      "currency": [
+        { "name": "Omen of Sinistral Crystallisation", "category": "omen" },
+        { "name": "Essence of Horror", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"]
+      }
+    },
+    {
+      "index": 3,
+      "title": "Dextral Necromancy + Preserved Rib + Echoes → resistance suffix",
+      "description": "Stack Omen of Dextral Necromancy + Preserved Rib. Use Abyssal Echoes for reroll. You want any resistance suffix here.",
+      "currency": [
+        { "name": "Omen of Dextral Necromancy", "category": "omen" },
+        { "name": "Preserved Rib", "category": "bone" },
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "% to .* resistance", "suffix": true }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "title": "Exalt → Sinistral Crystallise + Essence of Hysteria for MS",
+      "description": "Plain Exalted Orb to fill another prefix slot. Then Sinistral Crystallisation + Essence of Hysteria — consumes that prefix and substitutes Movement Speed.",
+      "currency": [
+        { "name": "Exalted Orb", "category": "standard" },
+        { "name": "Omen of Sinistral Crystallisation", "category": "omen" },
+        { "name": "Essence of Hysteria", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "requiredMods": [
+          { "pattern": "% increased movement speed", "suffix": true }
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "title": "Homogenising + Greater Exalt + Perfect Exalt → finish double hybrid",
+      "description": "Final slam: Omen of Homogenising Exaltation + Omen of Greater Exaltation + Perfect Exalted Orb. 100% chance to hit double hybrid evasion/es on the remaining prefix slots.\n\nBoots done — T1/T2 deflection, T1 attack speed (carried over), movement speed, resistance, and double hybrid.",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Perfect Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "T1/T2 deflection rating is the headline — lead with it.",
+    "Movement speed is THE filter people use. Match the MS roll to your asking price tier."
+  ],
+  "notes": [
+    "This craft is simpler than gloves — fewer brick points, more linear progression.",
+    "If you're skipping step 4 (don't need MS), just exalt a prefix and let it land however."
+  ]
+}

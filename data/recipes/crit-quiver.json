@@ -1,0 +1,93 @@
+{
+  "title": "Crit Quiver Craft (Visceral Quiver)",
+  "slot": "quiver",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "6-mod crit-flavored quiver with T1 flat damage, bow damage or projectile speed prefixes, and crit-friendly suffixes (crit dmg, crit chance, +2 level, attack speed). Cheaper than crafting a full bow.",
+  "difficulty": 3,
+  "estimatedCostMin": 1,
+  "estimatedCostMax": 6,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 75,
+    "base": "Visceral Quiver",
+    "hint": "Pickup white quivers or buy them off trade. ilvl 75 is enough for the relevant mod tiers."
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Perfect Transmute + Perfect Aug → magic 2-mod",
+      "description": "On a white Visceral Quiver, apply Perfect Orb of Transmutation followed by Perfect Orb of Augmentation. You're looking for a 2-mod magic with either:\n\n• T1 flat damage prefix, OR\n• T2 bow damage / projectile speed prefix\n\nPlus a good suffix (crit damage bonus, crit chance, +2 level, or attack speed). If you don't hit both — alt and re-augment.",
+      "currency": [
+        { "name": "Perfect Orb of Transmutation", "category": "standard" },
+        { "name": "Perfect Orb of Augmentation", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["magic"],
+        "affixCount": { "min": 2, "max": 2 }
+      },
+      "stopLoss": "If you're spending more than 30 quivers chasing this 2-mod combo, stop and look for fractured bases instead."
+    },
+    {
+      "index": 1,
+      "title": "Perfect Regal + Omen of Homogenising Coronation",
+      "description": "Stack Omen of Homogenising Coronation with a Perfect Regal Orb. You want the regal to hit a PREFIX (flat damage / bow damage / projectile speed).\n\nIf the regal hits a suffix instead, you're forced to Greater Exalt the prefix slot and decide whether the craft is still worth finishing — only continue if the prefix lands at T3 or better flat damage, projectile speed or bow damage.",
+      "currency": [
+        { "name": "Perfect Regal Orb", "category": "standard" },
+        { "name": "Omen of Homogenising Coronation", "category": "omen" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 3 }
+      },
+      "branches": [
+        {
+          "condition": "Regal hit a suffix instead of prefix",
+          "match": {
+            "affixCount": { "min": 3 }
+          },
+          "nextStep": 1,
+          "message": "Greater Exalt the prefix and check the roll. Only continue if T3+ flat damage / projectile speed / bow damage. Otherwise restart."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "title": "Bone slam: Sinistral Necromancy + Preserved Jawbone + Abyssal Echoes",
+      "description": "Stack:\n• Omen of Sinistral Necromancy (forces PREFIX)\n• Preserved Jawbone\n• Abyssal Echoes (reroll unveil choices)\n\nUnveil priority: high flat damage > bow damage > projectile speed.\n\nIf you fail to hit anything good, try annulling. Don't burn Omen of Light on this slot — it bricks more often than it saves.",
+      "currency": [
+        { "name": "Omen of Sinistral Necromancy", "category": "omen" },
+        { "name": "Preserved Jawbone", "category": "bone" },
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 }
+      },
+      "stopLoss": "This step is the brick-risk step. If unveil offerings are all garbage, annul and retry — Omen of Light is not worth it here."
+    },
+    {
+      "index": 3,
+      "title": "Finish with double-omen Greater Exalt (or Perfect Exalt if all T1)",
+      "description": "Use Omen of Homogenising Exaltation + Omen of Greater Exaltation + Greater Exalted Orb.\n\nIf the quiver is already all T1 mods, swap the Greater Exalted Orb for a Perfect Exalted Orb instead — better odds at landing the final T1 prefix.\n\nThe quiver is now 6-mod and ready to list.",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard", "optional": true },
+        { "name": "Perfect Exalted Orb", "category": "standard", "optional": true }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "List by exact rolls — quiver buyers filter aggressively by individual mods.",
+    "Include a 'bow damage' and 'projectile speed' line in the description if both are present; some buyers don't filter the rare prefixes."
+  ],
+  "notes": [
+    "Visceral is the cheapest viable base — heavier quivers are not worth the price hike for this strategy.",
+    "Step 3 is the brick step. Set a cost ceiling for yourself before starting and walk away if you blow past it."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Helmet Craft (Ancestral Tiara — Double ES + Double Resist or +2 Minion Sell)",
+  "slot": "helmet",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Ancestral Tiara with T1 %ES + T1 maximum ES OR a hybrid double-ES setup, paired with double resistance / rarity / +2 minion suffix. +2 minions is a sell-back candidate for big profit.",
+  "difficulty": 4,
+  "estimatedCostMin": 5,
+  "estimatedCostMax": 18,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 78,
+    "base": "Ancestral Tiara",
+    "hint": "Ancestral Tiara is the target base. You'll burn through a few bases looking for the right magic 2-mod combo in step 1."
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Perfect Transmute + Aug → magic with T1 %ES or T1 Max ES prefix",
+      "description": "You'll need multiple bases for this step. Apply Perfect Transmute + Perfect Aug looking for:\n\n• Prefix: T1 %ES or T1 Maximum ES (NOT hybrid — hybrid bricks the craft).\n• Suffix: any resistance, rarity, or +2 minion mod.\n\nIf prefix lands hybrid → discard, try next base.",
+      "currency": [
+        { "name": "Perfect Orb of Transmutation", "category": "standard", "qty": 5 },
+        { "name": "Perfect Orb of Augmentation", "category": "standard", "qty": 5 }
+      ],
+      "expectedAfter": {
+        "rarity": ["magic"]
+      },
+      "stopLoss": "Hybrid % es + max es is a brick. Don't try to recover — start fresh with a new base."
+    },
+    {
+      "index": 1,
+      "title": "Greater Rarity / Greater Resistance Essence → upgrade to 3-mod rare",
+      "description": "Apply a Greater Rarity essence or any Greater Resistance essence. End state should be: T1 ES prefix + (double resistance OR rarity/resistance) suffix.",
+      "currency": [
+        { "name": "Greater Essence of Fortify", "category": "essence", "optional": true },
+        { "name": "Essence of Greed", "category": "essence", "optional": true }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 3 }
+      }
+    },
+    {
+      "index": 2,
+      "title": "Dextral Necromancy + Preserved Rib → fill suffix",
+      "description": "Use Omen of Dextral Necromancy with Preserved Rib to fill the remaining suffix slot. Don't unveil yet — that comes in step 4.",
+      "currency": [
+        { "name": "Omen of Dextral Necromancy", "category": "omen" },
+        { "name": "Preserved Rib", "category": "bone" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 }
+      }
+    },
+    {
+      "index": 3,
+      "title": "Homogenising + Greater + Perfect Exalt → finish prefixes (RISKY)",
+      "description": "Use Omen of Homogenising Exaltation + Omen of Greater Exaltation + Perfect Exalted Orb.\n\nThis step can BRICK. There is a low chance to hit double hybrid (bad — bricks the helmet). More likely: lands the other ES affix + one hybrid affix.\n\nIf bricked, the only saves are Chaos Orb or Annul → high risk of total loss.",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Perfect Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 5 }
+      },
+      "stopLoss": "If this step lands double hybrid, the helmet is bricked. Decide your max loss tolerance BEFORE slamming this step."
+    },
+    {
+      "index": 4,
+      "title": "Unveil suffix with Abyssal Echoes",
+      "description": "With prefixes locked, unveil your final suffix using Abyssal Echoes. Target priorities (descending): resistance, rarity, +2 minions.\n\n→ Hit +2 minions? Sell the helmet for big profit — even though we don't use minions, +2 minion ancestral tiaras are in massive demand.",
+      "currency": [
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "+2 Minions Ancestral Tiara → sell as-is, the price is much higher than a usable helmet for your own build.",
+    "If keeping for yourself, list comparable rolled helmets to set your asking price."
+  ],
+  "notes": [
+    "Hybrid ES prefix (%es + max es combined as one mod) is the gotcha — it kills the craft at step 0.",
+    "Step 3 has real brick risk. Don't slam this craft on a base you can't afford to lose."
+  ]
+}

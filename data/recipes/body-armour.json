@@ -1,0 +1,91 @@
+{
+  "title": "Body Armour Craft (Slipstrike / Falconer’s — T1 Evasion + Deflection + Resists)",
+  "slot": "body_armour",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Slipstrike Vest (pure evasion) or Falconer's Jacket (evasion/es) endgame body armour with T1 %evasion or T1 max evasion prefix, deflection-rating suffix, and clean resistance + unveiled tail.",
+  "difficulty": 4,
+  "estimatedCostMin": 4,
+  "estimatedCostMax": 18,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 79,
+    "base": "Slipstrike Vest (pure evasion, ilvl 79) OR Falconer's Jacket (evasion/es, ilvl 78)",
+    "hint": "Body armours roll a large mod pool — perfect exalt is wasted here. Use Greater Exalted Orb instead."
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Perfect Transmute + Aug → magic with T1 %evasion or T1 Max Evasion + good suffix",
+      "description": "Bring multiple bases. Apply Perfect Transmute + Perfect Aug. You want:\n\n• Prefix: T1 %evasion OR T1 Maximum Evasion (NOT hybrid — hybrid kills the craft).\n• Suffix: any resistance OR deflection rating.\n\nIf prefix is hybrid → discard, try next base.",
+      "currency": [
+        { "name": "Perfect Orb of Transmutation", "category": "standard", "qty": 5 },
+        { "name": "Perfect Orb of Augmentation", "category": "standard", "qty": 5 }
+      ],
+      "expectedAfter": {
+        "rarity": ["magic"]
+      },
+      "stopLoss": "Hybrid prefix is a brick. Move to next base, don't try to recover."
+    },
+    {
+      "index": 1,
+      "title": "Greater Resistance Essence → upgrade to 3-mod rare",
+      "description": "Apply any Greater Resistance essence — adds the third mod. End state: 1 prefix + 2 suffix.",
+      "currency": [
+        { "name": "Greater Essence of the Body", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 3 }
+      }
+    },
+    {
+      "index": 2,
+      "title": "Dextral Necromancy + Preserved Rib → fill suffix slot",
+      "description": "Use Omen of Dextral Necromancy with Preserved Rib to fill the remaining suffix slot. Don't unveil yet.",
+      "currency": [
+        { "name": "Omen of Dextral Necromancy", "category": "omen" },
+        { "name": "Preserved Rib", "category": "bone" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 }
+      }
+    },
+    {
+      "index": 3,
+      "title": "Homogenising + Greater Exalt → prefixes (use GREATER, not Perfect)",
+      "description": "Use Omen of Homogenising Exaltation + Omen of Greater Exaltation + Greater Exalted Orb.\n\nDO NOT use Perfect Exalt on body armours — the mod pool is too large for the perfect roll odds to pay off. Greater Exalt gives you something halfway decent on average.\n\nRisk: double hybrid roll is a brick. Recover with Chaos Orb / Annulment Orb if it bricks.",
+      "currency": [
+        { "name": "Omen of Homogenising Exaltation", "category": "omen" },
+        { "name": "Omen of Greater Exaltation", "category": "omen" },
+        { "name": "Greater Exalted Orb", "category": "standard" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 5 }
+      },
+      "stopLoss": "Double hybrid roll bricks the craft. Set max-spend budget before slamming."
+    },
+    {
+      "index": 4,
+      "title": "Unveil suffix with Abyssal Echoes",
+      "description": "Prefixes done — now unveil the final suffix using Abyssal Echoes. Targets: deflection rating, then any resistance.",
+      "currency": [
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "Slipstrike pure evasion sells fastest. Lead with %evasion + deflection in your description.",
+    "Falconer's hybrid sells slower but commands a premium with good rolls — patience pays."
+  ],
+  "notes": [
+    "Body armour mod pool is huge — accept that you'll get something 'mostly good' rather than perfect.",
+    "Greater Exalt > Perfect Exalt here. Don't waste the perfect."
+  ]
+}

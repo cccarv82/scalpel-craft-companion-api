@@ -64,22 +64,30 @@ export async function POST(req: Request) {
   return NextResponse.json({ matches })
 }
 
+// Normalize mod text so RePoE-fork's stored form and the plugin's PoeItem-parsed
+// form collapse to the same key. Examples:
+//   RePoE:  "+(5-8) to [Strength|Strength]"
+//   Plugin: "+7 to Strength"
+//   Both →  "# to strength"
 function normalizeModText(text: string): string {
-  return text
+  let t = text
+  // Strip wiki tags: [DisplayName|WikiName] or [DisplayName] -> DisplayName
+  t = t.replace(/\[([^|\]]+)\|[^\]]+\]/g, '$1').replace(/\[([^\]]+)\]/g, '$1')
+  // Roll ranges like (5-8) or (5 to 8) -> #
+  t = t.replace(/\(\s*[-+]?\d+(\.\d+)?\s*(?:-|to)\s*[-+]?\d+(\.\d+)?\s*\)/gi, '#')
+  // Standalone numbers (including signed) -> #
+  t = t.replace(/[+-]?\d+(\.\d+)?/g, '#')
+  // Drop "+" signs and percents
+  t = t.replace(/[+%]/g, '')
+  // Collapse "X to Y" between two #s
+  t = t.replace(/#\s*(?:to|-)\s*#/g, '# to #')
+  return t
     .toLowerCase()
-    .replace(/[+]?\d+(\.\d+)?/g, '#') // numbers -> #
     .replace(/\s+/g, ' ')
     .replace(/[.,]/g, '')
     .trim()
 }
 
 function textsMatch(candidate: string, input: string): boolean {
-  if (candidate === input) return true
-  if (candidate.includes('# to # ') || candidate.includes('# to #')) {
-    // tolerate "# to # life" vs "#-# life"
-    const c = candidate.replace('# to #', '# #')
-    const i = input.replace('# to #', '# #')
-    return c === i
-  }
-  return false
+  return candidate === input
 }

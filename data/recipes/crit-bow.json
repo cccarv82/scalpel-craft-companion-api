@@ -1,0 +1,154 @@
+{
+  "title": "Crit Bow Craft (DPS / Ele / Crit / Atk Speed)",
+  "slot": "bow",
+  "poeVersion": 2,
+  "league": "all",
+  "goal": "Endgame crit bow: T1 base crit chance, T2+ flat elemental damage, attack speed, crit damage bonus, and a strong sixth mod via unveil/abyss. Five suffix-prefix balanced rolls; can finish at 3 prefixes + 3 suffixes.",
+  "difficulty": 4,
+  "estimatedCostMin": 8,
+  "estimatedCostMax": 25,
+  "costCurrency": "divine",
+  "baseRequirements": {
+    "ilvl": 81,
+    "base": "Gemini Bow",
+    "hint": "Pickup ilvl 81 Gemini Bow bases off the ground OR buy white/magic bases off trade. Magic bases let you start step 1 immediately. For the fracture step you want a 3-mod rare that already contains an abyss modifier so the fracture is 1/3 instead of 1/4.",
+    "sockets": 2,
+    "fractureFriendly": true
+  },
+  "steps": [
+    {
+      "index": 0,
+      "title": "Fracture T2+ Critical Hit Chance",
+      "description": "Pickup ilvl 81 Gemini Bow bases (off the ground or buy magic bases off trade) and use a Greater Essence of Seeking to slam crit chance.\n\nWhen you are ready to fracture: make sure the bow is a 3-mod rare WITH an abyss modifier present. This turns the fracture odds from 1/4 into 1/3 — significantly cheaper on average. Use a Fracturing Orb to lock in the crit roll.\n\nGoal mod: +(3.11–3.80)% to Critical Hit Chance (T2) or +(4.41–5.00)% T1.",
+      "currency": [
+        { "name": "Greater Essence of Seeking", "category": "essence" },
+        { "name": "Fracturing Orb", "category": "standard", "optional": false }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "fractured": true,
+        "ilvlMin": 81,
+        "baseTypeIncludes": ["Gemini Bow"],
+        "requiredMods": [
+          {
+            "pattern": "% to critical hit chance",
+            "minTier": 2,
+            "suffix": true,
+            "description": "Fractured T2+ crit (3.11%+)"
+          }
+        ]
+      },
+      "stopLoss": "If you keep failing to hit a 3-mod with abyss before fracturing, walk away — re-essence is cheap but fractures are not. Don't gamble fractures on 1/4 odds when 1/3 is available."
+    },
+    {
+      "index": 1,
+      "title": "Annul to fracture + 1, chaos spam for T2+ flat ele or T3+ % phys",
+      "description": "Annul the bow until you have only the fractured crit mod plus 1 other mod. Then chaos spam looking for either:\n\n• T2 or better flat elemental damage (lightning, fire or cold), OR\n• T3 or better % increased physical damage\n\nThis is your prefix anchor for the rest of the craft.",
+      "currency": [
+        { "name": "Orb of Annulment", "category": "standard" },
+        { "name": "Chaos Orb", "category": "standard", "qty": 200 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "fractured": true,
+        "affixCount": { "min": 2, "max": 3 },
+        "requiredMods": [
+          {
+            "pattern": "adds # to # (lightning|fire|cold) damage",
+            "minTier": 2,
+            "prefix": true,
+            "description": "T2+ flat elemental OR..."
+          }
+        ]
+      },
+      "branches": [
+        {
+          "condition": "Hit a great T3+ % phys instead of flat ele",
+          "match": {
+            "requiredMods": [
+              { "pattern": "% increased physical damage", "minTier": 3, "prefix": true }
+            ]
+          },
+          "nextStep": 2,
+          "message": "Acceptable — % phys is also a viable prefix anchor."
+        }
+      ],
+      "stopLoss": "If 300+ chaos spent and no good prefix, switch to a recombinator approach or restart the base."
+    },
+    {
+      "index": 2,
+      "title": "Bone slam: Omen of the Liege + Sinistral Necromancy + Preserved Jawbone, then Abyssal Echoes",
+      "description": "Stack:\n• Omen of the Liege (next bone delivers a guaranteed valuable mod — no junk)\n• Omen of Sinistral Necromancy (forces the bone to land a PREFIX)\n• Preserved Jawbone\n\nThen activate Abyssal Echoes to unveil. Priority for unveil:\n\n1. Companion damage\n2. Quiver bonus\n3. T2 flat elemental\n4. T3+ % phys\n5. T1 ele dmg with attacks",
+      "currency": [
+        { "name": "Omen of the Liege", "category": "omen" },
+        { "name": "Omen of Sinistral Necromancy", "category": "omen" },
+        { "name": "Preserved Jawbone", "category": "bone" },
+        { "name": "Abyssal Echoes", "category": "echo" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 3 }
+      }
+    },
+    {
+      "index": 3,
+      "title": "Dextral exalt → Dextral crystallise → Perfect Essence of Electricity",
+      "description": "1. Omen of Dextral Exaltation + Exalted Orb → forces a suffix to hit.\n2. Omen of Dextral Crystallisation + Perfect Essence of Electricity → removes the (now blocking) suffix you just slammed without touching prefixes, and replaces with guaranteed lightning damage as a PREFIX.\n\nResult: you keep all the good prefixes, the lightning mod becomes your third prefix.",
+      "currency": [
+        { "name": "Omen of Dextral Exaltation", "category": "omen" },
+        { "name": "Exalted Orb", "category": "standard" },
+        { "name": "Omen of Dextral Crystallisation", "category": "omen" },
+        { "name": "Perfect Essence of Electricity", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 4 },
+        "requiredMods": [
+          { "pattern": "adds # to # lightning damage", "minTier": 1, "prefix": true }
+        ]
+      },
+      "stopLoss": "Skip this step if you already have 3 great prefixes — go straight to step 5 and start essence-finishing suffixes."
+    },
+    {
+      "index": 4,
+      "title": "Finish suffixes: 2× Exalt then Perfect Essences of Haste + Battle",
+      "description": "Exalt twice to bring the bow to 6 affixes — they will land on whichever side is empty. If suffixes are still missing, use Perfect Essence of Haste (attack speed) and Perfect Essence of Battle (crit damage bonus) to finish them.\n\nThe bow is now complete: 3 prefixes (your flat damage + lightning + something from bone) + 3 suffixes (fractured crit chance + attack speed + crit damage bonus).",
+      "currency": [
+        { "name": "Exalted Orb", "category": "standard", "qty": 2 },
+        { "name": "Perfect Essence of Haste", "category": "essence" },
+        { "name": "Perfect Essence of Battle", "category": "essence" }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 },
+        "requiredMods": [
+          { "pattern": "% increased attack speed", "minTier": 1, "suffix": true },
+          { "pattern": "to critical damage bonus", "minTier": 1, "suffix": true }
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "title": "Add runes for the final flat damage push",
+      "description": "Add 2 sockets if not already present, then apply Greater Iron Runes (flat physical damage) into both sockets. Final DPS pass.",
+      "currency": [
+        { "name": "Artificer’s Orb", "category": "standard", "qty": 2 },
+        { "name": "Greater Iron Rune", "category": "rune", "qty": 2 }
+      ],
+      "expectedAfter": {
+        "rarity": ["rare"],
+        "affixCount": { "min": 6 }
+      }
+    }
+  ],
+  "pricingTips": [
+    "Total DPS: list at the actual rolled value.",
+    "Physical DPS: list at the actual rolled value.",
+    "Critical Hit Chance: list a touch below your actual roll (or list both and price in between) to catch more eyes in search filters."
+  ],
+  "notes": [
+    "If you brick during step 2 (annul out the wrong mod), restart from step 1 with a new base.",
+    "Step 4 is optional if you already have 3 strong prefixes from step 3.",
+    "The Abyss modifier in step 1 isn't required but is highly recommended — it more than doubles your fracture odds (1/3 vs 1/4)."
+  ]
+}
